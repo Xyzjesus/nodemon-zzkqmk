@@ -1,0 +1,11 @@
+{
+  "name": "node-starter",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node run.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "0.58.0",
+    "nodemon": "^2.0.12"
+  }
+}
