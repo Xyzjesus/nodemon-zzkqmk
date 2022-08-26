@@ -1,11 +1,24 @@
 const TelegramBot = require('node-telegram-bot-api'); // подключаем node-telegram-bot-api
 
-const token = '5530408809:AAHnTHfO3w6FcH_8HoVhH8JJPAOpP25vPgs'; // тут токен кторый мы получили от botFather
+const token = ''; // тут токен кторый мы получили от botFather
 
 // включаем самого обота
 const bot = new TelegramBot(token, { polling: true });
 
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
-  bot.sendPhoto(chatId, 'keks.png');
+  bot.sendMessage(chatId, 'привет, друг! это курс по постерам от @liinature. ');
+  bot.sendPhoto(
+    chatId,
+    'https://i.pinimg.com/564x/6f/4e/ff/6f4effe865b2b13653047f84bebcc35a.jpg'
+  );
+  // Конфиг клавиатуры
+  const keyboard = [
+    [
+      {
+        text: 'Кому подойдет', // текст на кнопке
+        callback_data: 'moreKeks', // данные для обработчика событий
+      },
+    ],
+  ];
 });
