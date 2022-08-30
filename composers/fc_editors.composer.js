@@ -95,8 +95,13 @@ composer.action('category1_btn6', async (ctx) => {
     await ctx.replyWithHTML(
       ctx.i18n.t('sposobioplati'),
       Markup.inlineKeyboard([
-        [Markup.button.callback('Иностранная карта', 'category1_btn8')],
-        [Markup.button.callback('Российская карта (10000 рублей)', 'category1_btn9')],
+        [Markup.button.callback('Иностранная карта 165$', 'category1_btn8')],
+        [
+          Markup.button.callback(
+            'Российская карта 10000 рублей',
+            'category1_btn9'
+          ),
+        ],
         [Markup.button.callback('Криптовалюта 165USDT', 'category1_btn10')],
       ])
     );
@@ -111,9 +116,14 @@ composer.action('category1_btn7', async (ctx) => {
     await ctx.replyWithHTML(
       ctx.i18n.t('sposobioplati'),
       Markup.inlineKeyboard([
-        [Markup.button.callback('Иностранная карта', 'category1_btn8')],
-        [Markup.button.callback('Российская карта (14000 рублей)', 'category1_btn9')],
-        [Markup.button.callback('Криптовалюта', 'category1_btn10')],
+        [Markup.button.callback('Иностранная карта 230$', 'category1_btn8')],
+        [
+          Markup.button.callback(
+            'Российская карта 14000 рублей',
+            'category1_btn9'
+          ),
+        ],
+        [Markup.button.callback('Криптовалюта 230USDT', 'category1_btn10')],
       ])
     );
   } catch (e) {
