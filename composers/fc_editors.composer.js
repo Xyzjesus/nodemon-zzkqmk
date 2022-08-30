@@ -2,7 +2,6 @@ const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
 const lib = require('../lib');
 
-// Обработка кнопок из категории Редакторы кода
 composer.action('btn_category1', async (ctx) => {
   try {
     await ctx.answerCbQuery();

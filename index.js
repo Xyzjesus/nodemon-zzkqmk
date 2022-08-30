@@ -21,8 +21,6 @@ bot.use(i18n.middleware());
 
 // Команда start и help
 bot.use(require('./composers/start.composer'));
-// Кнопки меню: "Об авторе", "Поддержать" и "Обратная связь"
-bot.use(require('./composers/menu.composer'));
 // Бесплатные курсы: все категории
 bot.use(require('./composers/fc.composer'));
 // Категория "Редакторы кода"
