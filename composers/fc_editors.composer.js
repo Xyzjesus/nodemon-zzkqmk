@@ -5,8 +5,9 @@ const lib = require('../lib');
 composer.action('btn_category1', async (ctx) => {
   try {
     await ctx.answerCbQuery();
+    await ctx.replyWithHTML(ctx.i18n.t('dlya_kogo'));
     await ctx.replyWithHTML(
-      ctx.i18n.t('dlya_kogo'),
+      ctx.i18n.t('stack'),
       Markup.inlineKeyboard([
         [Markup.button.callback('Программа', 'category1_btn1')],
       ])
@@ -19,8 +20,9 @@ composer.action('btn_category1', async (ctx) => {
 composer.action('category1_btn1', async (ctx) => {
   try {
     await ctx.answerCbQuery();
+    await ctx.replyWithHTML(ctx.i18n.t('programma'));
     await ctx.replyWithHTML(
-      ctx.i18n.t('programma'),
+      ctx.i18n.t('zadanya'),
       Markup.inlineKeyboard([
         [Markup.button.callback('Какие тарифы', 'category1_btn2')],
       ])
@@ -93,9 +95,9 @@ composer.action('category1_btn6', async (ctx) => {
     await ctx.replyWithHTML(
       ctx.i18n.t('sposobioplati'),
       Markup.inlineKeyboard([
-        [Markup.button.callback('Ино карта', 'category1_btn8')],
-        [Markup.button.callback('Рос карта', 'category1_btn9')],
-        [Markup.button.callback('Крипта', 'category1_btn10')],
+        [Markup.button.callback('Иностранная карта', 'category1_btn8')],
+        [Markup.button.callback('Российская карта (10000 рублей)', 'category1_btn9')],
+        [Markup.button.callback('Криптовалюта 165USDT', 'category1_btn10')],
       ])
     );
   } catch (e) {
@@ -109,9 +111,9 @@ composer.action('category1_btn7', async (ctx) => {
     await ctx.replyWithHTML(
       ctx.i18n.t('sposobioplati'),
       Markup.inlineKeyboard([
-        [Markup.button.callback('Ино карта', 'category1_btn8')],
-        [Markup.button.callback('Рос карта', 'category1_btn9')],
-        [Markup.button.callback('Крипта', 'category1_btn10')],
+        [Markup.button.callback('Иностранная карта', 'category1_btn8')],
+        [Markup.button.callback('Российская карта (14000 рублей)', 'category1_btn9')],
+        [Markup.button.callback('Криптовалюта', 'category1_btn10')],
       ])
     );
   } catch (e) {
