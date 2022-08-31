@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "dotenv": "^16.0.1",
-    "serverless": "^3.22.0",
     "telegraf": "^4.9.0",
     "telegraf-i18n": "^6.6.0"
   },
