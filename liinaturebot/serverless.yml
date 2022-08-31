@@ -1,0 +1,26 @@
+org: cryptopunk4201
+app: liinaturebot
+service: liinaturebot
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: eu-west-1
+
+functions:
+
+  liinaturebot:
+
+    handler: handler.liinaturebot
+
+    events:
+
+      - http:
+
+          path: liinaturebot
+
+          method: post
+
+          cors: true
