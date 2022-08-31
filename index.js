@@ -1,9 +1,15 @@
 // Подключить Telegraf для создания бота и Markup для создания клавиатуры
 const { Telegraf, Markup, Composer } = require('telegraf');
+const express = require('express')
+const expressApp = express()
 // Подключение path
 const path = require('path');
 // Подключение dotenv для скрытия токена
 require('dotenv').config();
+const port = process.env.PORT || 3000;
+expressApp.use(express.static('static'))
+expressApp.use(express.json());
+
 const composer = new Composer();
 const lib = require('./lib');
 
@@ -26,7 +32,16 @@ bot.use(require('./composers/fc.composer'));
 // Категория "Редакторы кода"
 bot.use(require('./composers/fc_editors.composer'));
 
-bot.launch();
+expressApp.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+expressApp.use(bot.webhookCallback('/secret-path'))
+bot.telegram.setWebhook('https://nodemon-zzkqmk-yfccce.codecapsules.co.za/secret-path')
+
+//bot.launch();
+
+expressApp.listen(port, () => console.log(`Listening on ${port}`));
 
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'));
