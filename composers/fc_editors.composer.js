@@ -3,7 +3,6 @@ const composer = new Composer();
 
 composer.command('course', async (ctx) => {
   try {
-    await ctx.replyWithHTML(ctx.i18n.t('summary'));
     await ctx.replyWithHTML(
       ctx.i18n.t('summary'), //TODO counter with storage of learners
       Markup.inlineKeyboard([
@@ -107,14 +106,14 @@ composer.action('category1_btn12', async (ctx) => {
     await ctx.replyWithHTML(
       ctx.i18n.t('sposobioplati'),
       Markup.inlineKeyboard([
-        [Markup.button.callback('Иностранная карта 165$', 'category1_btn8')],
+        [Markup.button.callback('Иностранная карта 100$', 'category1_btn8')],
         [
           Markup.button.callback(
-            'Российская карта 10000 рублей',
+            'Российская карта 6000 рублей',
             'category1_btn9'
           ),
         ],
-        [Markup.button.callback('Криптовалюта 165USDT', 'category1_btn10')],
+        [Markup.button.callback('Криптовалюта 100USDT', 'category1_btn10')],
       ])
     );
   } catch (e) {
