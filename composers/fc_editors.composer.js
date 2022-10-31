@@ -5,6 +5,7 @@ const lib = require('../lib');
 composer.command('course', async (ctx) => {
   try {
     await ctx.answerCbQuery();
+    await ctx.replyWithHTML(ctx.i18n.t('summary'));
     await ctx.replyWithHTML(
       ctx.i18n.t('summary'), //TODO counter with storage of learners
       Markup.inlineKeyboard([
