@@ -4,23 +4,9 @@ const lib = require('../lib');
 
 composer.command('course', async (ctx) => {
   try {
-    await ctx.replyWithHTML(ctx.i18n.t('letsstart'));
-    await ctx.replyWithHTML(
-      ctx.i18n.t('summary'),
-      Markup.inlineKeyboard([
-        [Markup.button.callback('Выбрать тариф', 'btn_category1')],
-      ])
-    );
-  } catch (e) {
-    console.error(e);
-  }
-});
-
-composer.action('category1_btn1', async (ctx) => {
-  try {
     await ctx.answerCbQuery();
     await ctx.replyWithHTML(
-      ctx.i18n.t('tarify'), //TODO counter with storage of learners
+      ctx.i18n.t('summary'), //TODO counter with storage of learners
       Markup.inlineKeyboard([
         [Markup.button.callback('Easy', 'category1_btn4')],
         [Markup.button.callback('Medium', 'category1_btn5')],
