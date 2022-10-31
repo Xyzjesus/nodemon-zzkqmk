@@ -27,9 +27,6 @@ bot.use(i18n.middleware());
 
 // Команда start и help
 bot.use(require('./composers/start.composer'));
-// Бесплатные курсы: все категории
-bot.use(require('./composers/fc.composer'));
-// Категория "Редакторы кода"
 bot.use(require('./composers/fc_editors.composer'));
 
 expressApp.get("/", (req, res) => {

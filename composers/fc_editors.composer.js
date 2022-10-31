@@ -2,14 +2,13 @@ const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
 const lib = require('../lib');
 
-composer.action('btn_category1', async (ctx) => {
+composer.command('course', async (ctx) => {
   try {
-    await ctx.answerCbQuery();
-    await ctx.replyWithHTML(ctx.i18n.t('dlya_kogo'));
+    await ctx.replyWithHTML(ctx.i18n.t('letsstart'));
     await ctx.replyWithHTML(
-      ctx.i18n.t('stack'),
+      ctx.i18n.t('summary'),
       Markup.inlineKeyboard([
-        [Markup.button.callback('Программа', 'category1_btn1')],
+        [Markup.button.callback('Выбрать тариф', 'btn_category1')],
       ])
     );
   } catch (e) {
@@ -20,40 +19,12 @@ composer.action('btn_category1', async (ctx) => {
 composer.action('category1_btn1', async (ctx) => {
   try {
     await ctx.answerCbQuery();
-    await ctx.replyWithHTML(ctx.i18n.t('programma'));
     await ctx.replyWithHTML(
-      ctx.i18n.t('zadanya'),
+      ctx.i18n.t('tarify'), //TODO counter with storage of learners
       Markup.inlineKeyboard([
-        [Markup.button.callback('Какие тарифы', 'category1_btn2')],
-      ])
-    );
-  } catch (e) {
-    console.error(e);
-  }
-});
-
-composer.action('category1_btn2', async (ctx) => {
-  try {
-    await ctx.answerCbQuery();
-    await ctx.replyWithHTML(
-      ctx.i18n.t('tarify'),
-      Markup.inlineKeyboard([
-        [Markup.button.callback('Сколько мест осталось?', 'category1_btn3')],
-      ])
-    );
-  } catch (e) {
-    console.error(e);
-  }
-});
-
-composer.action('category1_btn3', async (ctx) => {
-  try {
-    await ctx.answerCbQuery();
-    await ctx.replyWithHTML(
-      ctx.i18n.t('storage'), //TODO counter with storage of learners
-      Markup.inlineKeyboard([
-        [Markup.button.callback('Тариф 1', 'category1_btn4')],
-        [Markup.button.callback('Тариф 2', 'category1_btn5')],
+        [Markup.button.callback('Easy', 'category1_btn4')],
+        [Markup.button.callback('Medium', 'category1_btn5')],
+        [Markup.button.callback('Hard', 'category1_btn11')],
       ])
     );
   } catch (e) {
