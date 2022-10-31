@@ -1,6 +1,5 @@
 const { Composer, Markup } = require('telegraf');
 const composer = new Composer();
-const lib = require('../lib');
 
 composer.command('course', async (ctx) => {
   try {
